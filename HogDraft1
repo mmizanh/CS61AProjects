@@ -1,0 +1,25 @@
+#Problem One
+
+def roll_dice(num_rolls, dice=six_sided):
+    """Simulate rolling the DICE exactly NUM_ROLLS>0 times. Return the sum of
+    the outcomes unless any of the outcomes is 1. In that case, return the
+    number of 1's rolled (capped at 11 - NUM_ROLLS).
+    """
+    # These assert statements ensure that num_rolls is a positive integer.
+    assert type(num_rolls) == int, 'num_rolls must be an integer.'
+    assert num_rolls > 0, 'Must roll at least once.'
+    # BEGIN PROBLEM 1
+    #almost working?
+    postroll = []
+    for i in range(0, num_rolls+1):
+        postroll.append(dice())
+    if 1 not in postroll:
+        print(postroll)
+    else:
+        num_ones = 0
+        for x in postroll:
+            if x == 1:
+                num_ones + 1
+        if num_rolls <= 11:
+            return min(11-num_ones, num_ones)
+    # END PROBLEM 1
